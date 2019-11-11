@@ -10,8 +10,8 @@ namespace ProcessWire;
 
 $info = [
 
-    'title'      => "Wire Mail SendGrid",
-    'version'    => 100,
+    'title'      => "WireMailSendGrid",
+    'version'    => 104,
     'summary'    => "Extend WireMail to bypass PHP Mail and send mail via SendGrids Web API",
 
     'author'     => "The Big Surf",

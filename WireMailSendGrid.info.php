@@ -20,4 +20,8 @@ $info = [
     'autoload'   => true,
     'singular'   => true,
 
+    'requires'   => [
+        "ProcessWire>=3.0",
+    ],
+
 ];

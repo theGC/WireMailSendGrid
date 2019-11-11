@@ -1,7 +1,7 @@
 
 # WireMailSendGrid
 
-![SendGrid Logo](https://sendgrid.com/brand/sg-twilio/sg-twilio-lockup.svg "SendGrid Logo" =180x)
+<img alt="SendGrid Logo" src="https://sendgrid.com/brand/sg-twilio/sg-twilio-lockup.svg" width="200px" height="auto">
 
 A ProcessWire module: Extends WireMail to bypass PHP `mail` and send email via SendGrids Web API.
 

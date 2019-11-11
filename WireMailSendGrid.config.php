@@ -17,7 +17,7 @@ class WireMailSendGridConfig extends ModuleConfig {
             'name'        => 'sendGridSettingsFieldset',
             'type'        => 'fieldset',
             'label'       => $this->_('SendGrid Settings'),
-            'columnWidth' => 102,
+            'columnWidth' => 103,
             'children'    => [
 
                 [

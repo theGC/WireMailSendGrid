@@ -22,24 +22,11 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
 
     /**
-     * Hook WireMail ___send
-     *
-     */
-    public function init() {
-
-        $this->addHookBefore('WireMail::send', $this, 'hookWireMailBeforeSend');
-
-    }
-
-
-    /**
-     * before WireMail send is executed
      * Prevent the use of WireMail and Process the send via SendGrid Web API
-     * @param {HookEvent} ProcessWire event hook object
      * @return {int} a positive number (indicating number of addresses emailed) or 0 on failure
      *
      */
-    public function hookWireMailBeforeSend(HookEvent $event)
+    public function ___send()
     {
 
         require_once( __DIR__ . '/sendgrid-php/sendgrid-php.php' );
@@ -50,12 +37,6 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
         $boundary = $this->multipartBoundary();
         $subboundary = $this->multipartBoundary('alt');
-
-
-        // prevent calling of WireMail ___send()
-        //----------------------------------
-
-        $event->replace = true;
 
 
         // set up an email with SendGrids PHP API
@@ -214,10 +195,11 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
         }
 
+
         // replicate WireMail return value
         //----------------------------------
 
-        $event->return = $numSent;
+        return $numSent;
 
     }
 

@@ -1,5 +1,5 @@
 
-# WireMailSendGrid
+# WireMail: SendGrid
 
 <img alt="SendGrid Logo" src="https://sendgrid.com/brand/sg-twilio/sg-twilio-lockup.svg" width="200px" height="auto">
 

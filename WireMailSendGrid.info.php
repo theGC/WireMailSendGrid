@@ -1,7 +1,5 @@
 <?php
 
-namespace ProcessWire;
-
 
 /**
  * Wire Mail SendGrid
@@ -11,17 +9,17 @@ namespace ProcessWire;
 $info = [
 
     'title'      => "WireMail SendGrid",
-    'version'    => 105,
+    'version'    => 110,
     'summary'    => "Extend WireMail to bypass PHP Mail and send mail via SendGrids Web API",
 
     'author'     => "The Big Surf",
-    'href'       => "http://www.thebigsurf.co.uk",
+    'href'       => "https://github.com/theGC/WireMailSendGrid",
 
-    'autoload'   => true,
-    'singular'   => true,
+    'autoload'   => false,
+    'singular'   => false,
 
     'requires'   => [
-        "ProcessWire>=3.0",
+        "ProcessWire>=2.8",
     ],
 
 ];

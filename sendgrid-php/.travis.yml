@@ -1,0 +1,19 @@
+language: php
+
+before_script:
+  - composer install
+  - "./test/prism.sh &"
+  - sleep 60
+
+script:
+  - "vendor/bin/phpunit test --filter test*"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3

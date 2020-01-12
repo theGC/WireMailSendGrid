@@ -232,7 +232,7 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
             foreach ($this->mail['cc'] as $cc) {
 
-                $this->email->addCc($cc['email'], $cc['name'], $cc['substitutions'], $cc['subject']);
+                $this->email->addCc($cc['email'], $cc['name'], $cc['substitutions']);
 
             }
 
@@ -246,7 +246,7 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
             foreach ($this->mail['bcc'] as $bcc) {
 
-                $this->email->addBcc($bcc['email'], $bcc['name'], $bcc['substitutions'], $bcc['subject']);
+                $this->email->addBcc($bcc['email'], $bcc['name'], $bcc['substitutions']);
 
             }
 
@@ -307,7 +307,7 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
         foreach ($this->mail['to'] as $to) {
 
-            $this->email->addTo($to['email'], $to['name'], $to['substitutions'], $to['subject']);
+            $this->email->addTo($to['email'], $to['name'], $to['substitutions']);
 
             $numSent++;
 
@@ -417,13 +417,20 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
 
         $name = $this->wire('sanitizer')->text($name);
 
+        if ($subject && is_string($subject)) {
+
+            $substitutions = [
+                'subject' => $subject,
+            ];
+
+        }
+
         if ($email) {
 
             $this->mail[$mailKey][$email] = [
                 'email' => $email,
                 'name' => $name,
                 'substitutions' => $substitutions,
-                'subject' => $subject,
             ];
 
         }

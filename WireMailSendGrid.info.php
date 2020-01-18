@@ -9,7 +9,7 @@
 $info = [
 
     'title'      => "WireMail SendGrid",
-    'version'    => 112,
+    'version'    => 113,
     'summary'    => "Extend WireMail to bypass PHP Mail and send mail via SendGrids Web API",
 
     'author'     => "The Big Surf",

@@ -92,7 +92,7 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
         if ($this->sendGridClickTrackingEnable) {
 
             $this->email->setClickTracking(
-                !!($this->sendGridClickTrackingEnable),
+                true,
                 !!($this->sendGridClickTrackingEnableText)
             );
 
@@ -105,8 +105,10 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
         if ($this->sendGridOpenTrackingEnable) {
 
             $this->email->setOpenTracking(
-                !!($this->sendGridOpenTrackingEnable),
+                true,
                 $this->sendGridOpenTrackingSubstitutionTag
+                    ? $this->sendGridOpenTrackingSubstitutionTag
+                    : null
             );
 
         }
@@ -118,10 +120,16 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
         if ($this->sendGridSubscriptionTrackingEnable) {
 
             $this->email->setSubscriptionTracking(
-                !!($this->sendGridSubscriptionTrackingEnable),
-                $this->sendGridSubscriptionTrackingText,
-                $this->sendGridSubscriptionTrackingHTML,
+                true,
+                $this->sendGridSubscriptionTrackingText
+                    ? $this->sendGridSubscriptionTrackingText
+                    : null,
+                $this->sendGridSubscriptionTrackingHTML
+                    ? $this->sendGridSubscriptionTrackingHTML
+                    : null,
                 $this->sendGridSubscriptionTrackingSubstitutionTag
+                    ? $this->sendGridSubscriptionTrackingSubstitutionTag
+                    : null,
             );
 
         }
@@ -133,12 +141,22 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
         if ($this->sendGridAnalyticsEnable) {
 
             $this->email->setGanalytics(
-                !!($this->sendGridAnalyticsEnable),
-                $this->sendGridAnalyticsUtmSource,
-                $this->sendGridAnalyticsUtmMedium,
-                $this->sendGridAnalyticsUtmTerm,
-                $this->sendGridAnalyticsUtmContent,
+                true,
+                $this->sendGridAnalyticsUtmSource
+                    ? $this->sendGridAnalyticsUtmSource
+                    : null,
+                $this->sendGridAnalyticsUtmMedium
+                    ? $this->sendGridAnalyticsUtmMedium
+                    : null,
+                $this->sendGridAnalyticsUtmTerm
+                    ? $this->sendGridAnalyticsUtmTerm
+                    : null,
+                $this->sendGridAnalyticsUtmContent
+                    ? $this->sendGridAnalyticsUtmContent
+                    : null,
                 $this->sendGridAnalyticsUtmCampaign
+                    ? $this->sendGridAnalyticsUtmCampaign
+                    : null
             );
 
         }

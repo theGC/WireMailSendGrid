@@ -129,7 +129,7 @@ class WireMailSendGrid extends WireMail implements Module, ConfigurableModule {
                     : null,
                 $this->sendGridSubscriptionTrackingSubstitutionTag
                     ? $this->sendGridSubscriptionTrackingSubstitutionTag
-                    : null,
+                    : null
             );
 
         }
